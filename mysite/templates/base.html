@@ -31,8 +31,19 @@
             
              
             </ul>
+            {% if user.is_authenticated%}
+ 
+      welcome {{request.user}}
+     
+        <a  href="/logout">Logout</a>
+      
+  
+ 
+
+            {%else %}
             <button type="button" class="btn btn-success mr-2" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
             <button type="button" class="btn btn-success mr-2" data-bs-toggle="modal" data-bs-target="#signupModal">SignUp</button>
+            {%endif%}
             <form class="form-inline mx-2 my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
