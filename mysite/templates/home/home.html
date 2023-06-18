@@ -2,5 +2,91 @@
 {% block title %}home{% endblock title%}
 
 {%block body%}
- {% comment %} <h3>This is a heading</h3>  {% endcomment %}
+
+<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="signupModal">SignUp Here</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="/signup" method="post">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Choose a unique username">
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+          </div>
+          <div class="form-group">
+            <label for="pass1">Choose a Password</label>
+            <input type="password" class="form-control" id="pass1" name="pass1" placeholder="Choose a Password">
+          </div>
+          <div class="form-group">
+            <label for="pass2">confirm password</label>
+            <input type="password" class="form-control" id="pass2" name="pass2" placeholder="enter your password again">
+          </div>
+           {% csrf_token %}
+         <button type="submit" class="btn btn-primary">Submit</button>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+    </div>
+  </div>
+</div>
+</div>
+ <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModal">Login Here</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="/signup" method="post"> 
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="loginusername" name="loginusername" placeholder="Choose a unique username">
+          </div>
+          <div class="form-group">
+            <label for="pass">Enter your password</label>
+            <input type="password" class="form-control" id="pass" name="pass" placeholder="Enter your password ">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div> 
+
+ <div class="container">
+    <div class="jumbotron my-3">
+      <h1 class="display-4">Welcome to Blogger!</h1>
+      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+      <hr class="my-4">
+      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+      <a class="btn btn-primary btn-lg" href="/blog" role="button">Go to Blog</a>
+      </div>
+      <div class="container">
+        <div class="container">
+            <h2>Popular Blogposts</h2>
+            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 my-4 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                      <strong class="d-inline-block mb-2 text-primary">World</strong>
+                      <h3 class="mb-0">Featured post</h3>
+                      <div class="mb-1 text-muted">Nov 22</div>
+                      <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                      <a href="/blog" class="stretched-link">Continue reading</a>
+                    </div>
+               
+                  </div>
+                  </div>
+      </div>
+    </div>
+    
  {% endblock body%}

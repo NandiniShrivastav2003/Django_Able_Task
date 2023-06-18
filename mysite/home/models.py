@@ -8,7 +8,6 @@ class Contact(models.Model):
     phone=models.CharField(max_length=13)
     email=models.CharField(max_length=100)
     content=models.TextField()
-    # timeStamp=models.DateTimeField(auto_now_add=True,blank=True)
 
     def __str__(self):
         return 'Message From' + self.name 

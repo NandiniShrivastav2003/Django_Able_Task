@@ -2,5 +2,15 @@
 {% block title %}BlogPost{% endblock title%}
 
 {%block body%}
- {% comment %} <h3>This is a heading</h3>  {% endcomment %}
+ 
+
+<div class="container my-3">
+    <div class="blog-post">
+        <h2 class="blog-post-title">{{post.title}}</h2>
+          <p>by <small>{{post.author}}</small></p>
+        <p>{{post.content}}</p>
+        <hr>
+    </div>
+</div>
+
  {% endblock body%}
